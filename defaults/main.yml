@@ -1,0 +1,17 @@
+---
+# defaults file for influx
+influx_image: influxdb:2.0
+influx_data_storage: 1G
+influx_config_storage: 10M
+influx_namespace: influx
+
+influx_manifests : [{
+  src: influx_data_pvc.j2.yaml,
+  dest: influx_data_pvc.yaml
+},{
+  src: influx_deployment.j2.yaml,
+  dest: influx_deployment.yaml
+},{
+  src: influx_service.j2.yaml,
+  dest: influx_service.yaml
+}]
