@@ -23,31 +23,18 @@ spec:
           name: influx
           protocol: TCP
         volumeMounts:
-        - name: influx-config
-          mountPath: etc/influxdb2
-        - name: influx-data
-          mountPath: /var/lib/influxdb2
+        #- name: influx-config
+        #  mountPath: etc/influxdb2
+        #- name: influx-data
+        #  mountPath: /var/lib/influxdb2
         env:
-        - name: DOCKER_INFLUXDB_INIT_MODE
-          value: setup
-        - name: DOCKER_INFLUXDB_INIT_USERNAME
-          value: cobra
-          #TODO: put in a secret
-        - name: DOCKER_INFLUXDB_INIT_PASSWORD
-          value: cobra
-        - name: DOCKER_INFLUXDB_INIT_ORG
-          value: cobra-bier
-        - name: DOCKER_INFLUXDB_INIT_BUCKET
-          value: test
-        - name: DOCKER_INFLUXDB_INIT_RETENTION
-          value: 1w
-          #TODO: put in a secret
-        - name: DOCKER_INFLUXDB_INIT_ADMIN_TOKEN
-          value: my-super-secret-auth-token
-      volumes:
-      - name: influx-data
-        persistentVolumeClaim:
-          claimName: influx-data-claim
-      - name: influx-config
-        persistentVolumeClaim:
-          claimName: influx-config-claim
+        - name: INFLUXDB_DATABASE
+          value: brewery
+        - name: INFLUXDB_USERNAME
+          value: root
+        - name: INFLUXDB_PASSWORD
+          value: root
+      #volumes:
+      #- name: influx-data
+      #  persistentVolumeClaim:
+      #    claimName: influx-data-claim

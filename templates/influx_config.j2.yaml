@@ -4,12 +4,15 @@ kind: ConfigMap
 metadata:
   name: influx-config
 data:
-  DOCKER_INFLUXDB_INIT_MODE: setup
-  DOCKER_INFLUXDB_INIT_USERNAME: cobra
-  #TODO: put in a secret
-  DOCKER_INFLUXDB_INIT_PASSWORD: cobra
-  DOCKER_INFLUXDB_INIT_ORG: cobra-bier
-  DOCKER_INFLUXDB_INIT_BUCKET: test
-  DOCKER_INFLUXDB_INIT_RETENTION: 1w
-  #TODO: put in a secret
-  DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: my-super-secret-auth-token
+  #DOCKER_INFLUXDB_INIT_MODE: setup
+  #DOCKER_INFLUXDB_INIT_USERNAME: cobra
+  ##TODO: put in a secret
+  #DOCKER_INFLUXDB_INIT_PASSWORD: cobra
+  #DOCKER_INFLUXDB_INIT_ORG: cobra-bier
+  #DOCKER_INFLUXDB_INIT_BUCKET: test
+  #DOCKER_INFLUXDB_INIT_RETENTION: 1w
+  ##TODO: put in a secret
+  #DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: my-super-secret-auth-token
+  INFLUXDB_DATABASE: brewery
+  INFLUXDB_USERNAME: root
+  INFLUXDB_PASSWORD: root
