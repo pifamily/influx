@@ -14,4 +14,7 @@ influx_manifests : [{
 },{
   src: influx_service.j2.yaml,
   dest: influx_service.yaml
+},{
+  src: influx_ingress.j2.yaml,
+  dest: influx_ingress.yaml
 }]

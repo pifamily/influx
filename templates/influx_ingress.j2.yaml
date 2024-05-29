@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: infux-ingress
+  namespace: {{ influx_namespace }}
+spec:
+  rules:
+    - host: influx
+      http:
+        paths:
+          - path: /
+            pathType: Exact
+            backend:
+              service:
+                name:  influx-service
+                port:
+                  number: 8086
+ 
